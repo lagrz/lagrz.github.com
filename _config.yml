@@ -65,11 +65,12 @@ github_skip_forks: false
 
 # Twitter
 twitter_user: lagrz
-twitter_tweet_count: 5
+twitter_tweet_count: 0
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
 twitter_tweet_button: true
+twitter_show_feed: false
 
 # Google +1
 google_plus_one: false
