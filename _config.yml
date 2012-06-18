@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://lagrz.github.com
-title: Hack Quest
+title: Lagrz
 subtitle: Adventures through development.
 author: Roberto
 simple_search: http://google.com/search
-description: Blog on some of the issues thoughts and feats that occur while working on some application.
+description: Blog on some of the issues thoughts and feats that occur while coding.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
