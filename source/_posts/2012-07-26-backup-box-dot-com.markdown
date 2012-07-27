@@ -5,7 +5,6 @@ date: 2012-07-26 20:43
 comments: true
 categories: 
 ---
-# Box.com Download #
 
 Taken from the [Readme File](https://github.com/lagrz/BoxDownload)
 
