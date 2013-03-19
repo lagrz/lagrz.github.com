@@ -4,7 +4,7 @@
   <title><![CDATA[Lagrz]]></title>
   <link href="http://lagrz.github.com/atom.xml" rel="self"/>
   <link href="http://lagrz.github.com/"/>
-  <updated>2013-03-20T00:11:41+04:00</updated>
+  <updated>2013-03-20T00:17:35+04:00</updated>
   <id>http://lagrz.github.com/</id>
   <author>
     <name><![CDATA[Roberto]]></name>
@@ -18,9 +18,7 @@
     <link href="http://lagrz.github.com/blog/2012/07/26/backup-box-dot-com/"/>
     <updated>2012-07-26T20:43:00+04:00</updated>
     <id>http://lagrz.github.com/blog/2012/07/26/backup-box-dot-com</id>
-    <content type="html"><![CDATA[<h3>Update:</h3>
-
-<p>Box.com has added a sync client similar to dropbox therefore this script is no longer useful</p>
+    <content type="html"><![CDATA[<h3>Update: Box.com has added a sync client similar to dropbox therefore this script is no longer useful</h3>
 
 <p>Taken from the <a href="https://github.com/lagrz/BoxDownload">Readme File</a></p>
 
