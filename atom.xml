@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Lagrz]]></title>
+  <link href="http://lagrz.github.com/atom.xml" rel="self"/>
+  <link href="http://lagrz.github.com/"/>
+  <updated>2013-03-19T23:21:56+04:00</updated>
+  <id>http://lagrz.github.com/</id>
+  <author>
+    <name><![CDATA[Roberto]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Backup box.com]]></title>
+    <link href="http://lagrz.github.com/blog/2012/07/26/backup-box-dot-com/"/>
+    <updated>2012-07-26T20:43:00+04:00</updated>
+    <id>http://lagrz.github.com/blog/2012/07/26/backup-box-dot-com</id>
+    <content type="html"><![CDATA[<p>Taken from the <a href="https://github.com/lagrz/BoxDownload">Readme File</a></p>
+
+<p>This script will download all files recursively from your <a href="http://www.box.com">Box.com</a> account.</p>
+
+<p>You will need to modify the <code>box.yml</code> file with your api key. You can get an api key <a href="https://www.box.com/developers/services/edit/">here</a>. You will need to create a Box.com app in order to get an api key. The <code>auth_token</code> attribute in the box.yml will be automatically saved after you authenticate with your api key, modify it if you already have one premade or leave the value 0 as the script will try to get one for you.</p>
+
+<pre><code>box.yml
+--- 
+api_key: API_KEY
+auth_token: 0
+</code></pre>
+
+<h2>Getting an auth_token</h2>
+
+<p>Make sure you have already modified the <code>box.yml</code> file and added your <code>api_key</code>.</p>
+
+<p>First run:</p>
+
+<pre><code>bundle install
+bundle exec ruby box.rb
+</code></pre>
+
+<p>The script will use launchy to run your default browser to the box site. Enter your site credentials and authorize your app. Once you have done so go back to your terminal window and type <code>y</code> or <code>yes</code>.</p>
+
+<pre><code>ready to continue?
+yes
+</code></pre>
+
+<p>The script will then save the token information onto the <code>box.yml</code> file for future use, and proceed to download the files stored on your box account.</p>
+
+<hr />
+
+<p>NOTES:</p>
+
+<ul>
+<li>The auth_token may expire (I&#8217;m not sure how long they are good for)</li>
+<li>There may or may not be a bandwidth limit as to how much you can download from a free account.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gitlab for a local Github alternative]]></title>
+    <link href="http://lagrz.github.com/blog/2012/06/13/gitlab-for-a-local-github-alternative/"/>
+    <updated>2012-06-13T21:04:00+04:00</updated>
+    <id>http://lagrz.github.com/blog/2012/06/13/gitlab-for-a-local-github-alternative</id>
+    <content type="html"><![CDATA[<p><a href="http://git-scm.com/">Git</a> as everyone may already know is a really great tool for version control. I have started using it for all of my day to day coding. It is by far the best off site git tool, but there are instances where you may not want to have your code hosted there or you may just want to host your code in multiple places (which is a smart thing to do). I use <a href="https://github.com/">Github</a> for almost all my repositories, as well as <a href="https://bitbucket.org/">Bitbucket</a> but if you are looking for an alternative to both and don&#8217;t wish to pay for the enterprise version of <a href="https://github.com/">Github</a> then you have a few open source choices. Ranging from <a href="http://gitorious.org/">Gitorious</a> to <a href="http://gitlabhq.com/">Gitlab</a>. There are many other alternative projects out there that work really well, but I&#8217;m using an amazon micro instance which can&#8217;t take too much stress and quickly runs out of memory with all the other crap that I have running on it as well. I therefore settled with <a href="http://gitlabhq.com/">Gitlab</a> which is a nice open source project written on ruby on rails.</p>
+
+<p>Installing <a href="http://gitlabhq.com/">Gitlab</a> is pretty straight forward, they have a <a href="https://github.com/gitlabhq/gitlabhq/blob/stable/doc/installation.md">tutorial</a> on their <a href="https://github.com/gitlabhq/gitlabhq">Github Page</a> on how to install it on Ubuntu but you can easily take that and use it to install on your favorite linux distro. It does require that you install <a href="http://redis.io/">Redis</a>, and <a href="https://github.com/blog/542-introducing-resque">Resque</a>, but again the process is pretty straightforward and simple.</p>
+
+<p>Gitlab is a good simple solution if you are looking to hosting a few repositories with a small group of people. It works well for my needs though I will say it is pretty plain and simple, it doesn&#8217;t have all the bells and whistles github offers. As an additional remote backup location this is a great little rails app.</p>
+
+<p>I also wrote a small ruby script that can be run automatically through a cronjob that helps with backing up all the repos hosted by your <a href="http://gitlabhq.com/">Gitlab</a> installation and uploading the compressed back up to an Amazon S3 bucket. It&#8217;s a simple script that can be used as a template for a more sophisticated back up script.</p>
+
+<div><script src='https://gist.github.com/2928017.js?file='></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trying Owncloud]]></title>
+    <link href="http://lagrz.github.com/blog/2012/04/11/trying-owncloud/"/>
+    <updated>2012-04-11T21:32:00+04:00</updated>
+    <id>http://lagrz.github.com/blog/2012/04/11/trying-owncloud</id>
+    <content type="html"><![CDATA[<p>I have a ton of files scattered around the web and various backup external drives as well as usb drives. It&#8217;s a pain keeping track of where any given file is at. I need a central place to keep all my files and be able to access them mostly from all my computers at home, as well as use it sort of like a dropbox replacement. I have an extra box running on an Intel Atom processor, so I therefore installed Linux on it, a webserver and slapped <a href="http://owncloud.org/">Owncloud</a> on it.</p>
+
+<p>The installation is pretty simple and straightforward specially if you have installed a php application on a vps before. The website has pretty clear installation <a href="http://owncloud.org/support/setup-and-installation/linux-server/">instructions</a>.</p>
+
+<p>After the initial install I would highly recommend mounting the webdav locally and then plug in your external devices and perform an <code>rsync</code> or <code>cp -R</code> into it.</p>
+
+<p>Install davfs2 package first if you don&#8217;t already have it installed.</p>
+
+<pre><code>sudo apt-get install davfs2
+</code></pre>
+
+<p>Create the folder it will be mounted on.</p>
+
+<pre><code>sudo mkdir /mnt/DavDropbox
+</code></pre>
+
+<p>Mount the webdav folder of course replace the content inside the single quotes with the path to your webdav.php (you can use localhost here).</p>
+
+<pre><code>sudo mount.davfs 'http://127.0.0.1/owncloud/files/webdav.php' /mnt/DavDropbox
+</code></pre>
+
+<p>You are now ready to start copying files into that folder.</p>
+
+<p>Now the only issue is organizing files and what not. Also remember you can make this accessible outside of your LAN by forwarding port 80 from your router to your linux box and setting up some kind of dynamic dns service like <a href="http://dyn.com">Dyn</a>, or <a href="http://www.no-ip.com">no-ip</a>, a simple web search will get you more alternatives.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First post using octopress]]></title>
+    <link href="http://lagrz.github.com/blog/2012/04/05/first-post-using-octopress/"/>
+    <updated>2012-04-05T21:44:00+04:00</updated>
+    <id>http://lagrz.github.com/blog/2012/04/05/first-post-using-octopress</id>
+    <content type="html"><![CDATA[<p>Installing <a href="http://octopress.org/">Octopress</a> on OSX Lion required a small extra step. RVM required me to install <a href="https://github.com/kennethreitz/osx-gcc-installer">osx-gcc-installer</a> because it does not work with the current version of XCode which kind of bummed me out a bit because I had to download an extra 200 somewhat megabyte file, and install it. From there things were a bit easier using RVM to install 1.9.2 was pretty easy, as well as doing the initial setup of <a href="http://octopress.org/">Octopress</a>. The only thing that I need to figure out is why instead of just using <code>rake</code> I have to use <code>bundler exec rake</code>. Not a big issue but just a bit annoying, and I&#8217;m sure I&#8217;ll find a way around it eventually. First order of business is tweak the layout around, hopefully I&#8217;ll get a chance soon.</p>
+]]></content>
+  </entry>
+  
+</feed>

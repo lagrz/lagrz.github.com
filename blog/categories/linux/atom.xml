@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Lagrz]]></title>
+  <link href="http://lagrz.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://lagrz.github.com/"/>
+  <updated>2013-03-19T23:21:56+04:00</updated>
+  <id>http://lagrz.github.com/</id>
+  <author>
+    <name><![CDATA[Roberto]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Trying Owncloud]]></title>
+    <link href="http://lagrz.github.com/blog/2012/04/11/trying-owncloud/"/>
+    <updated>2012-04-11T21:32:00+04:00</updated>
+    <id>http://lagrz.github.com/blog/2012/04/11/trying-owncloud</id>
+    <content type="html"><![CDATA[<p>I have a ton of files scattered around the web and various backup external drives as well as usb drives. It's a pain keeping track of where any given file is at. I need a central place to keep all my files and be able to access them mostly from all my computers at home, as well as use it sort of like a dropbox replacement. I have an extra box running on an Intel Atom processor, so I therefore installed Linux on it, a webserver and slapped <a href="http://owncloud.org/">Owncloud</a> on it.</p>
+
+<p>The installation is pretty simple and straightforward specially if you have installed a php application on a vps before. The website has pretty clear installation <a href="http://owncloud.org/support/setup-and-installation/linux-server/">instructions</a>.</p>
+
+<p>After the initial install I would highly recommend mounting the webdav locally and then plug in your external devices and perform an <code>rsync</code> or <code>cp -R</code> into it.</p>
+
+<p>Install davfs2 package first if you don't already have it installed.</p>
+
+<pre><code>sudo apt-get install davfs2
+</code></pre>
+
+<p>Create the folder it will be mounted on.</p>
+
+<pre><code>sudo mkdir /mnt/DavDropbox
+</code></pre>
+
+<p>Mount the webdav folder of course replace the content inside the single quotes with the path to your webdav.php (you can use localhost here).</p>
+
+<pre><code>sudo mount.davfs 'http://127.0.0.1/owncloud/files/webdav.php' /mnt/DavDropbox
+</code></pre>
+
+<p>You are now ready to start copying files into that folder.</p>
+
+<p>Now the only issue is organizing files and what not. Also remember you can make this accessible outside of your LAN by forwarding port 80 from your router to your linux box and setting up some kind of dynamic dns service like <a href="http://dyn.com">Dyn</a>, or <a href="http://www.no-ip.com">no-ip</a>, a simple web search will get you more alternatives.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://lagrz.github.com/blog/2012/04/05/first-post-using-octopress/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lagrz.github.com/blog/2012/04/11/trying-owncloud/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lagrz.github.com/blog/2012/06/13/gitlab-for-a-local-github-alternative/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lagrz.github.com/blog/2012/07/26/backup-box-dot-com/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lagrz.github.com/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lagrz.github.com/blog/archives/</loc>
+        <lastmod>2013-03-19T23:14:33+04:00</lastmod>
+    </url>
+</urlset>

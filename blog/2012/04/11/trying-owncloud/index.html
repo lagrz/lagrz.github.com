@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Trying Owncloud - Lagrz</title>
+  <meta name="author" content="Roberto">
+
+  
+  <meta name="description" content="I have a ton of files scattered around the web and various backup external drives as well as usb drives. It&#8217;s a pain keeping track of where any &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lagrz.github.com/blog/2012/04/11/trying-owncloud">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Lagrz" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Lagrz</a></h1>
+  
+    <h2>Adventures through development.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lagrz.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Trying Owncloud</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-11T21:32:00+04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have a ton of files scattered around the web and various backup external drives as well as usb drives. It&#8217;s a pain keeping track of where any given file is at. I need a central place to keep all my files and be able to access them mostly from all my computers at home, as well as use it sort of like a dropbox replacement. I have an extra box running on an Intel Atom processor, so I therefore installed Linux on it, a webserver and slapped <a href="http://owncloud.org/">Owncloud</a> on it.</p>
+
+<p>The installation is pretty simple and straightforward specially if you have installed a php application on a vps before. The website has pretty clear installation <a href="http://owncloud.org/support/setup-and-installation/linux-server/">instructions</a>.</p>
+
+<p>After the initial install I would highly recommend mounting the webdav locally and then plug in your external devices and perform an <code>rsync</code> or <code>cp -R</code> into it.</p>
+
+<p>Install davfs2 package first if you don&#8217;t already have it installed.</p>
+
+<pre><code>sudo apt-get install davfs2
+</code></pre>
+
+<p>Create the folder it will be mounted on.</p>
+
+<pre><code>sudo mkdir /mnt/DavDropbox
+</code></pre>
+
+<p>Mount the webdav folder of course replace the content inside the single quotes with the path to your webdav.php (you can use localhost here).</p>
+
+<pre><code>sudo mount.davfs 'http://127.0.0.1/owncloud/files/webdav.php' /mnt/DavDropbox
+</code></pre>
+
+<p>You are now ready to start copying files into that folder.</p>
+
+<p>Now the only issue is organizing files and what not. Also remember you can make this accessible outside of your LAN by forwarding port 80 from your router to your linux box and setting up some kind of dynamic dns service like <a href="http://dyn.com">Dyn</a>, or <a href="http://www.no-ip.com">no-ip</a>, a simple web search will get you more alternatives.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roberto</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-11T21:32:00+04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lagrz.github.com/blog/2012/04/11/trying-owncloud/" data-via="" data-counturl="http://lagrz.github.com/blog/2012/04/11/trying-owncloud/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/05/first-post-using-octopress/" title="Previous Post: First post using octopress">&laquo; First post using octopress</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/13/gitlab-for-a-local-github-alternative/" title="Next Post: Gitlab for a local Github alternative">Gitlab for a local Github alternative &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/26/backup-box-dot-com/">Backup box.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/13/gitlab-for-a-local-github-alternative/">Gitlab for a local Github alternative</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/11/trying-owncloud/">Trying Owncloud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/05/first-post-using-octopress/">First post using octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Roberto -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
