@@ -67,9 +67,9 @@ github_skip_forks: false
 twitter_user: 
 twitter_tweet_count: 10
 twitter_show_replies: false
-twitter_follow_button: true
+twitter_follow_button: false
 twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 twitter_show_feed: false
 
 # Google +1

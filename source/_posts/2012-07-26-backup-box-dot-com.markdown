@@ -5,6 +5,7 @@ date: 2012-07-26 20:43
 comments: true
 categories: 
 ---
+###Update: Box.com has added a sync client similar to dropbox therefore this script is no longer useful
 
 Taken from the [Readme File](https://github.com/lagrz/BoxDownload)
 
