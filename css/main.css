@@ -1217,11 +1217,11 @@ form{
 	.title h1{font-size:18px;border:none;float:none;}
 	.titleArrow{top:-18px;}
 	.intro h1{line-height:36px;}
-	.circle{margin-left:35px;}
+	.circle{margin-left:auto;margin-right:auto;}
 	.columns_Three h2:before{top:54%;}
 	#quote:after{bottom:444px;left:31%;width:70px;}
 	#skill{float:none;margin-right:0;width:190px;margin-bottom:30px;}
-	.columns_Two, .columns_Three,#testimonials  {width:190px;float:none;margin-right:0;}
+	.columns_Two, .columns_Three,#testimonials  {width:100%;float:none;margin-right:0;}
 	.columns_Three{margin-bottom:20px;}
 	#servicesInner .columns_Three:last-child{margin-bottom:0;}
 	#testimonials .testimoniaContainer div {width:180px;}
