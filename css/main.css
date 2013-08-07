@@ -1164,7 +1164,7 @@ form{
 /* Mobile Landscape Size -> Tablet Portrait size*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	html{-webkit-text-size-adjust: none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-	header, #innerContent{width:400px;}
+	header, #innerContent{width:90%;}
 	#header, #innerHeader{height:79px;}
 	#navigation {position: relative;right: -54px;}
 	#logo{float:none;text-align:center;}
@@ -1203,7 +1203,7 @@ form{
 /* Mobile Portrait Size -> Mobile Landscape Size */
 @media only screen and (max-width:479px) {
 	html{-webkit-text-size-adjust: none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-	header, #innerContent{width:230px;}
+	header, #innerContent{width:90%;}
 	#header, #innerHeader{height:79px;}
 	#navigation {position: relative;right: 2px;}
 	#mainNav li{margin-right:0;}
